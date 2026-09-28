@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy policy · TabForge</title>
+  <meta name="description" content="What each TabForge Chrome extension stores, what leaves your browser, and why each permission is needed.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Schibsted+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/logo.svg" alt="" width="30" height="30">TabForge</a>
+    <nav class="nav" aria-label="Main">
+      <a href="./#tools">Tools</a>
+      <a href="./#plans">Plans</a>
+      <a href="./#faq">Questions</a>
+      <a href="mailto:Devs@oaktreetech.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <article class="doc">
+    <h1>Privacy policy</h1>
+    <p class="updated">Last updated: 28 September 2026</p>
+
+    <p>TabForge makes Chrome extensions. This policy covers all of them. The general rules come first, followed by a section for each extension that lists exactly what it stores, what leaves your browser and why it needs each permission.</p>
+
+    <div class="toc">
+      <strong>Jump to an extension</strong>
+      <ul>
+        <li><a href="#focusgate">FocusGate</a></li>
+        <li><a href="#voicetype">VoiceType</a></li>
+        <li><a href="#tablegrab">TableGrab</a></li>
+        <li><a href="#sumup-ai">SumUp AI</a></li>
+        <li><a href="#linkedreach">LinkedReach</a></li>
+        <li><a href="#sellerlens">SellerLens</a></li>
+      </ul>
+    </div>
+
+    <h2 id="general">The short version</h2>
+    <ul>
+      <li>We do not run servers that receive your browsing data, page content, contacts or files.</li>
+      <li>Everything the extensions save stays in your browser storage on your device. Removing an extension deletes its data.</li>
+      <li>The extensions contain no analytics, advertising, tracking pixels or remote code.</li>
+      <li>We do not sell, rent or share personal data.</li>
+    </ul>
+
+    <h2 id="payments">Payments and license keys</h2>
+    <p>Pro plans are sold through <a href="https://www.lemonsqueezy.com/">Lemon Squeezy</a>, which acts as our merchant of record. When you buy a plan, Lemon Squeezy collects your name, email address, billing country and payment details to process the order, calculate tax and send your receipt. Your card details go to Lemon Squeezy and its payment processors, never to us. Lemon Squeezy's own privacy policy applies to that data.</p>
+    <p>We receive the order details Lemon Squeezy shares with sellers, such as your name, email address, the product you bought and the order status. We use them only to provide the product, answer support requests and meet legal obligations.</p>
+    <p>When you enter a license key in an extension, the extension sends the key and a device label to Lemon Squeezy's license service (<code>api.lemonsqueezy.com</code>) to activate it. It checks the key again about once a day so Pro turns off when a subscription ends or an order is refunded. These requests contain no browsing data.</p>
+
+    <h2 id="focusgate">FocusGate</h2>
+    <h3>Stored in your browser</h3>
+    <ul>
+      <li>The sites you choose to block.</li>
+      <li>Focus sessions: start and end time, and whether strict mode is on.</li>
+      <li>Blocking schedules you set up (Pro).</li>
+      <li>Daily counters of blocked attempts and focus minutes. No addresses, page titles or times of individual visits are recorded.</li>
+      <li>Your settings and your license status.</li>
+    </ul>
+    <h3>What leaves your browser</h3>
+    <p>Only the license check described above. Chrome itself performs the blocking through redirect rules, so FocusGate does not read page content or log the sites you visit.</p>
+    <h3>Permissions</h3>
+    <ul>
+      <li><code>declarativeNetRequest</code> and access to all sites: lets Chrome redirect any site you choose to block to FocusGate's blocked page. No scripts run on websites.</li>
+      <li><code>storage</code>: saves your block list and settings.</li>
+      <li><code>alarms</code> and <code>notifications</code>: end sessions on time, apply schedules and tell you when a session ends.</li>
+      <li><code>activeTab</code> and <code>tabs</code>: read the current tab's address when you click "Add current site", and redirect open tabs of blocked sites when a session starts.</li>
+    </ul>
+
+    <h2 id="voicetype">VoiceType</h2>
+    <h3>Audio</h3>
+    <p>VoiceType uses the speech recognition built into your browser. In Google Chrome, your voice is transcribed by Google's speech service under Google's privacy policy. VoiceType itself never receives, records, stores or sends audio. Dictation starts only when you click the mic button or press the shortcut, and Chrome asks for microphone permission on each site.</p>
+    <h3>Stored in your browser</h3>
+    <ul>
+      <li>Your settings: dictation language, voice commands on or off, mic button on or off. Chrome may sync these between your own signed-in devices.</li>
+      <li>Your custom word replacements (Pro).</li>
+      <li>A daily count of free sessions and your license status.</li>
+    </ul>
+    <h3>What leaves your browser</h3>
+    <p>Only the license check. Dictated text goes straight into the field you're typing in. VoiceType keeps no copy of it.</p>
+    <h3>Permissions</h3>
+    <ul>
+      <li>Script on all sites: shows the mic button next to text fields on any page. It reads nothing except the field you dictate into.</li>
+      <li><code>storage</code>: saves your settings and the free-session count.</li>
+      <li><code>activeTab</code>: responds to the keyboard shortcut on the current tab.</li>
+    </ul>
+
+    <h2 id="tablegrab">TableGrab</h2>
+    <h3>What it reads</h3>
+    <p>Only the page you're on, and only when you click the TableGrab button. It then finds the tables and lists on that page. No site is monitored in the background.</p>
+    <h3>Stored in your browser</h3>
+    <ul>
+      <li>Your last extraction (column names, rows, page address and title), so the preview survives reopening the popup. "Clear" removes it immediately, and it is deleted when the browser closes.</li>
+      <li>Your export options and your license status.</li>
+    </ul>
+    <h3>What leaves your browser</h3>
+    <p>Extracted data never does. Files are built on your device and saved to your Downloads folder or copied to your clipboard. Only the license check leaves the browser.</p>
+    <h3>Permissions</h3>
+    <ul>
+      <li><code>activeTab</code> and <code>scripting</code>: read tables on the current page when you click the button.</li>
+      <li><code>downloads</code>: save the file you asked for.</li>
+      <li><code>storage</code>: keep your last extraction and options.</li>
+    </ul>
+
+    <h2 id="sumup-ai">SumUp AI</h2>
+    <h3>Stored in your browser</h3>
+    <ul>
+      <li>The AI API keys you paste in Settings, one per provider.</li>
+      <li>Your preferences: provider, model, summary format, length and language.</li>
+      <li>Summary history (Pro): the last 50 summaries with page title, address, extracted text and summary. You can delete entries or clear it all.</li>
+      <li>A daily count of free summaries and your license status.</li>
+    </ul>
+    <h3>What leaves your browser</h3>
+    <ul>
+      <li>When you click Summarize, Regenerate or send a chat message, the page text or video transcript is sent to the AI provider you chose, using your own key: OpenAI (<code>api.openai.com</code>), Anthropic (<code>api.anthropic.com</code>) or Google Gemini (<code>generativelanguage.googleapis.com</code>). That provider's privacy policy applies. If you choose Chrome's built-in AI, the text is processed on your device and nothing is sent.</li>
+      <li>YouTube captions are loaded from <code>www.youtube.com</code>, the same way the video page loads them.</li>
+      <li>The license check.</li>
+    </ul>
+    <p>Your API key is sent only to the provider it belongs to. Pages are never read in the background.</p>
+    <h3>Permissions</h3>
+    <ul>
+      <li><code>sidePanel</code>, <code>activeTab</code> and <code>scripting</code>: open the panel and read the current tab when you ask for a summary.</li>
+      <li><code>storage</code>: keep your settings, keys and history.</li>
+      <li>Access to the three AI services and YouTube: send your request and load captions.</li>
+    </ul>
+
+    <h2 id="linkedreach">LinkedReach</h2>
+    <h3>Stored in your browser</h3>
+    <ul>
+      <li>Contacts you choose to save: name, headline, company, location, profile address, status, notes and follow-up date.</li>
+      <li>Your message templates.</li>
+      <li>Your AI provider, model and API key, if you use AI drafts.</li>
+      <li>Your license status.</li>
+    </ul>
+    <h3>What leaves your browser</h3>
+    <ul>
+      <li>AI drafts (Pro, optional): when you click "Draft from current profile", the profile fields shown in the side card and your key are sent directly to the AI provider you chose. Nothing is sent unless you click that button.</li>
+      <li>The license check.</li>
+    </ul>
+    <p>LinkedReach reads only the LinkedIn profile page you're viewing, and only the fields shown in its side card. It does not send messages for you or automate LinkedIn.</p>
+    <h3>Permissions</h3>
+    <ul>
+      <li><code>storage</code>: keep contacts, templates and settings.</li>
+      <li><code>alarms</code> and <code>notifications</code>: follow-up reminders you set.</li>
+      <li><code>activeTab</code>: let the popup read the profile in the current tab.</li>
+      <li>Access to the three AI services: optional AI drafts only.</li>
+    </ul>
+
+    <h2 id="sellerlens">SellerLens</h2>
+    <h3>What it reads</h3>
+    <p>On Amazon product and search pages, it reads information shown publicly on the page: product ID, title, price, rating, review count, best sellers rank, brand, seller, fulfilment type, and the number of images and bullet points. This happens inside the page. Page data is never sent anywhere.</p>
+    <h3>Stored in your browser</h3>
+    <ul>
+      <li>Your last 30 analyzed products.</li>
+      <li>Profit calculator inputs you save (Pro).</li>
+      <li>Display preferences and your license status.</li>
+    </ul>
+    <h3>What leaves your browser</h3>
+    <p>Only the license check.</p>
+    <h3>Permissions</h3>
+    <ul>
+      <li>Script on the Amazon sites listed in the extension: shows the analysis panel.</li>
+      <li><code>storage</code>: keep history and settings.</li>
+      <li><code>activeTab</code>: open a product page from the popup.</li>
+    </ul>
+
+    <h2 id="rights">Your choices</h2>
+    <ul>
+      <li>Delete an extension's data by removing the extension, or with the clear or reset options inside it.</li>
+      <li>To access, correct or delete the order details we hold, email us. Lemon Squeezy handles requests about payment data under its own policy.</li>
+    </ul>
+
+    <h2 id="children">Children</h2>
+    <p>The extensions are not directed at children under 13, and we do not knowingly collect their data.</p>
+
+    <h2 id="changes">Changes</h2>
+    <p>If this policy changes, we update the date at the top. Significant changes are also noted in the extension's store listing.</p>
+
+    <h2 id="contact">Contact</h2>
+    <p>Email <a href="mailto:Devs@oaktreetech.com">Devs@oaktreetech.com</a> with any privacy question.</p>
+  </article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Legal">
+      <a href="privacy.html" aria-current="page">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund.html">Refunds</a>
+      <a href="mailto:Devs@oaktreetech.com">Contact</a>
+    </nav>
+    <p>© 2026 TabForge. Chrome is a trademark of Google LLC. TabForge is not affiliated with Google, LinkedIn, Amazon or YouTube.</p>
+  </div>
+</footer>
+</body>
+</html>
