@@ -87,7 +87,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .brand svg { width: 30px; height: 30px; }
 .nav { display: flex; gap: 6px 20px; flex-wrap: wrap; font-size: 15px; }
-.nav a { color: var(--muted); text-decoration: none; padding: 6px 2px; }
+.nav a { color: var(--muted); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; padding: 0 2px; }
 .nav a:hover { color: var(--ink); }
 .nav .lang { color: var(--ink); font-weight: 600; }
 
@@ -144,6 +144,7 @@ html[dir="rtl"] .strip::before { margin: 0 4px 12px 8px; }
   position: relative;
   flex: 0 0 auto;
   display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px;
   padding: 9px 16px 11px;
   border-radius: 10px 10px 0 0;
   color: var(--muted);
@@ -326,8 +327,14 @@ html[lang="ar"] h2 { letter-spacing: 0; line-height: 1.3; }
   display: flex; justify-content: space-between; gap: 16px;
 }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: "+"; font-family: var(--mono); color: var(--muted); font-size: 20px; line-height: 1.2; }
-.faq details[open] summary::after { content: "−"; }
+.faq summary:hover { color: var(--cobalt); }
+.faq summary::after {
+  content: "+"; flex: 0 0 auto;
+  font-family: var(--mono); color: var(--muted); font-size: 22px; line-height: 1.1;
+  transition: transform .2s ease;
+}
+.faq details[open] summary::after { transform: rotate(45deg); }
+@media (prefers-reduced-motion: reduce) { .faq summary::after { transition: none; } }
 .faq details p { margin: 0 0 18px; color: var(--muted); max-width: 70ch; }
 
 /* Contact */
@@ -346,12 +353,15 @@ html[lang="ar"] h2 { letter-spacing: 0; line-height: 1.3; }
 }
 .button:hover { filter: brightness(1.08); }
 
-/* Footer */
-.site-foot { padding: clamp(48px, 8vw, 96px) 0 40px; font-size: 15px; color: var(--muted); }
-.site-foot .wrap { display: grid; gap: 14px; }
-.site-foot nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
-.site-foot nav a { color: var(--ink); }
-.site-foot p { margin: 0; max-width: 72ch; }
+/* Footer: one quiet row, brand at the start, legal links at the end */
+.site-foot { margin-top: clamp(56px, 9vw, 112px); border-top: 1px solid var(--line); padding: 20px 0 28px; font-size: 15px; }
+.site-foot .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; }
+.site-foot .brand { font-size: 17px; gap: 8px; }
+.site-foot .brand img { width: 24px; height: 24px; }
+.site-foot nav { display: flex; flex-wrap: wrap; gap: 0 22px; }
+.site-foot nav a { color: var(--muted); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.site-foot nav a:hover { color: var(--ink); }
+.site-foot nav a[aria-current="page"] { color: var(--ink); font-weight: 600; box-shadow: inset 0 -2px 0 var(--cobalt); }
 
 /* ---------- Legal pages ---------- */
 .doc { max-width: 760px; padding-top: clamp(20px, 5vw, 56px); }
@@ -388,3 +398,26 @@ html[lang="ar"] .plan .tag,
 html[lang="ar"] .eyebrow { font-family: var(--body); }
 html[lang="ar"] .price-line b { font-family: var(--mono); }
 html[lang="ar"] .eyebrow { font-size: 14px; }
+
+/* Hero actions */
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.button-ghost {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 48px;
+  padding: 0 22px; border-radius: 10px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  font-weight: 600; text-decoration: none;
+}
+.button-ghost:hover { border-color: var(--ink); }
+.button { transition: filter .15s ease; }
+
+/* Lifetime is the better deal past a few months: say so with the spark */
+.plan.best { border-color: color-mix(in srgb, var(--cobalt) 45%, var(--line)); position: relative; }
+.plan .flag {
+  position: absolute; top: -12px; inset-inline-end: 18px;
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--spark); color: var(--spark-ink);
+  font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px;
+}
+.price-table td.save { color: var(--muted); font-size: 15px; }
+.brand { min-height: 44px; }
+.table-scroll { margin-top: 14px; }
